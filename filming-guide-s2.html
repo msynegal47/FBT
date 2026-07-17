@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FBT Filming Guide - Session 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1C2B3A;
+    --blush: #C9967F;
+    --blush-light: #F2DDD6;
+    --gold: #C9A96E;
+    --cream: #FAF7F2;
+    --white: #FFFFFF;
+    --gray: #6B6560;
+    --light-gray: #F0EBE5;
+    --border: #E2D9D2;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    color: var(--navy);
+    padding: 40px 24px;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .top-nav {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-link {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gray);
+    text-decoration: none;
+    padding: 6px 14px;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    transition: all 0.2s;
+  }
+  .nav-link:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
+
+  .page-header { margin-bottom: 56px; }
+  .page-eyebrow { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; display: block; }
+  .page-title { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 600; color: var(--navy); line-height: 1.1; margin-bottom: 8px; }
+  .page-subtitle { font-size: 14px; color: var(--gray); }
+
+  .section-label { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--blush); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid var(--blush-light); display: block; }
+
+  /* SETUP */
+  .setup-section { background: var(--white); border: 1px solid var(--border); border-top: 3px solid var(--navy); padding: 40px; margin-bottom: 40px; }
+  .setup-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 28px; }
+  .setup-block h3 { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blush); margin-bottom: 14px; }
+  .setup-block ul { list-style: none; }
+  .setup-block ul li { font-size: 13px; color: var(--gray); padding: 7px 0; border-bottom: 1px solid var(--light-gray); display: flex; gap: 10px; line-height: 1.5; }
+  .setup-block ul li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 7px; }
+  .setting-row { display: flex; justify-content: space-between; align-items: baseline; padding: 7px 0; border-bottom: 1px solid var(--light-gray); gap: 16px; }
+  .setting-label { font-size: 12px; font-weight: 500; color: var(--navy); flex-shrink: 0; }
+  .setting-value { font-size: 12px; color: var(--gray); text-align: right; }
+  .setup-note { background: var(--light-gray); padding: 14px 18px; margin-top: 16px; font-size: 12px; color: var(--gray); font-style: italic; line-height: 1.6; border-left: 2px solid var(--blush); }
+
+  /* DISCLAIMER SECTION */
+  .disclaimer-section { background: var(--white); border: 1px solid var(--border); border-top: 3px solid var(--gold); padding: 40px; margin-bottom: 40px; }
+  .disclaimer-intro { font-size: 14px; color: var(--gray); line-height: 1.7; margin-bottom: 24px; }
+  .disclaimer-options { display: flex; flex-direction: column; gap: 12px; }
+  .disclaimer-option { background: var(--light-gray); padding: 16px 20px; border-left: 3px solid var(--gold); }
+  .disclaimer-option-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; display: block; }
+  .disclaimer-option p { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-style: italic; color: var(--navy); line-height: 1.6; }
+  .disclaimer-note { font-size: 12px; color: var(--gray); margin-top: 16px; font-style: italic; }
+
+  /* SERIES BADGE */
+  .series-band { background: var(--navy); padding: 12px 32px; margin-bottom: 2px; display: flex; align-items: center; justify-content: space-between; }
+  .series-band-title { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+  .series-band-sub { font-size: 11px; color: rgba(255,255,255,0.4); }
+
+  /* BUCKET HEADER */
+  .bucket-header { margin: 56px 0 4px; display: flex; align-items: center; gap: 16px; }
+  .bucket-number { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 400; color: var(--blush-light); line-height: 1; flex-shrink: 0; }
+  .bucket-info h2 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--navy); }
+  .bucket-info p { font-size: 12px; color: var(--gray); margin-top: 4px; }
+
+  /* VIDEO CARD */
+  .video-card { background: var(--white); border: 1px solid var(--border); margin-bottom: 24px; }
+  .card-header { padding: 24px 32px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .card-num { font-family: 'Cormorant Garamond', serif; font-size: 13px; color: var(--blush); letter-spacing: 0.1em; }
+  .card-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--navy); flex: 1; }
+  .card-meta { display: flex; gap: 8px; align-items: center; flex-shrink: 0; flex-wrap: wrap; justify-content: flex-end; }
+  .format-badge { font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; padding: 5px 14px; border-radius: 100px; }
+  .badge-duo { background: var(--navy); color: var(--white); }
+  .badge-nichole { background: var(--blush); color: var(--white); }
+  .badge-jalyn { background: var(--gold); color: var(--white); }
+  .length-badge { font-size: 10px; color: var(--gray); background: var(--light-gray); padding: 5px 12px; border-radius: 100px; }
+
+  .card-body { padding: 28px 32px; display: grid; grid-template-columns: 200px 1fr; gap: 32px; }
+
+  .card-section-title { font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--blush); margin-bottom: 12px; display: block; }
+
+  .gear-list, .check-list { list-style: none; margin-bottom: 24px; }
+  .gear-list li, .check-list li { font-size: 12px; color: var(--gray); padding: 6px 0; border-bottom: 1px solid var(--light-gray); display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; }
+  .gear-list li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--gold); flex-shrink: 0; margin-top: 6px; }
+  .check-list li::before { content: '☐'; font-size: 13px; color: var(--blush); flex-shrink: 0; line-height: 1.3; }
+
+  /* HOOK BLOCK */
+  .hook-block { background: var(--navy); padding: 16px 20px; margin-bottom: 20px; }
+  .hook-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; display: block; }
+  .hook-text { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; color: var(--white); line-height: 1.4; }
+
+  /* SCRIPT */
+  .script-block { margin-bottom: 14px; }
+  .script-speaker { font-size: 9px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blush); margin-bottom: 4px; }
+  .script-line { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-style: italic; color: var(--navy); line-height: 1.65; padding-left: 12px; border-left: 2px solid var(--blush-light); }
+
+  /* DISCLAIMER CLOSER */
+  .disclaimer-closer { margin-top: 20px; padding: 14px 18px; background: var(--light-gray); border-left: 3px solid var(--gold); }
+  .disclaimer-closer-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; display: block; }
+  .disclaimer-closer-options { display: flex; flex-direction: column; gap: 6px; }
+  .disclaimer-closer-option { font-size: 13px; color: var(--gray); font-style: italic; display: flex; gap: 8px; align-items: flex-start; }
+  .disclaimer-closer-option::before { content: '›'; color: var(--gold); flex-shrink: 0; font-style: normal; }
+
+  /* DELIVERY */
+  .delivery-section { background: var(--white); border: 1px solid var(--border); border-top: 3px solid var(--blush); padding: 40px; margin-top: 56px; }
+  .folder-structure { background: var(--navy); padding: 24px 28px; margin-top: 20px; font-family: monospace; font-size: 13px; color: rgba(255,255,255,0.85); line-height: 2; border-radius: 2px; }
+  .folder-structure .folder { color: var(--gold); }
+  .folder-structure .sub { padding-left: 24px; color: rgba(255,255,255,0.6); }
+  .delivery-note { font-size: 13px; color: var(--gray); line-height: 1.7; margin-top: 20px; }
+
+  .doc-footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+  .doc-footer p { font-size: 12px; color: var(--gray); }
+  .doc-footer a { font-size: 12px; color: var(--blush); text-decoration: none; }
+
+  @media (max-width: 600px) {
+    .card-body { grid-template-columns: 1fr; }
+    .setup-grid { grid-template-columns: 1fr; }
+    .card-header { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="top-nav">
+  <a href="#setup" class="nav-link">Setup</a>
+  <a href="#disclaimer" class="nav-link">Disclaimer</a>
+  <a href="#bucket1" class="nav-link">Acquisition Exit</a>
+  <a href="#bucket2" class="nav-link">Revenue vs Wealth</a>
+  <a href="#bucket3" class="nav-link">401k / Layoff / Bonus</a>
+  <a href="#bucket4" class="nav-link">Mid-Year Check In</a>
+  <a href="#delivery" class="nav-link">Sending Footage</a>
+</nav>
+
+<!-- HEADER -->
+<div class="page-header">
+  <span class="page-eyebrow">Financial Balance Today - Session 2</span>
+  <h1 class="page-title">Filming Guide</h1>
+  <p class="page-subtitle">10 Videos &nbsp;·&nbsp; 4 Buckets &nbsp;·&nbsp; Mix of 20 and 45 second reels</p>
+</div>
+
+<!-- SETUP -->
+<div id="setup" class="setup-section">
+  <span class="section-label">Before You Start - Read Once</span>
+  <div class="setup-grid">
+    <div class="setup-block">
+      <h3>iPhone Settings</h3>
+      <div class="setting-row"><span class="setting-label">Resolution</span><span class="setting-value">4K at 30fps</span></div>
+      <div class="setting-row"><span class="setting-label">Format</span><span class="setting-value">High Efficiency</span></div>
+      <div class="setting-row"><span class="setting-label">Stabilization</span><span class="setting-value">Standard - ON</span></div>
+      <div class="setting-row"><span class="setting-label">White Balance Lock</span><span class="setting-value">ON</span></div>
+      <div class="setting-row"><span class="setting-label">Orientation</span><span class="setting-value">Vertical - always</span></div>
+      <div class="setup-note">Tap your face to lock focus before every video. Hold until AE/AF LOCK appears at the top.</div>
+    </div>
+    <div class="setup-block">
+      <h3>Framing</h3>
+      <ul>
+        <li>Eyes in the top third of the frame - not centered</li>
+        <li>Small space above your head - two fingers worth</li>
+        <li>Shoulders and chest in frame always</li>
+        <li>Solo: 3-4 feet from the phone</li>
+        <li>Duo: both 4-5 feet back, side by side, equal space</li>
+        <li>Phone at eye level or very slightly above</li>
+      </ul>
+    </div>
+    <div class="setup-block">
+      <h3>Audio</h3>
+      <ul>
+        <li>DJI Mic Mini clipped 6-8 inches below your chin</li>
+        <li>Connect to iPhone via USB-C before opening camera</li>
+        <li>10-second test recording before the first video</li>
+        <li>Close doors, turn off anything that hums</li>
+      </ul>
+    </div>
+    <div class="setup-block">
+      <h3>Delivery - New This Session</h3>
+      <ul>
+        <li>Hooks are written to be delivered straight to camera - deadpan, confident, no preamble</li>
+        <li>Say the hook exactly as written then make it your own from there</li>
+        <li>20 second reels - get in, say the thing, get out. No filler.</li>
+        <li>If you nail a take, send that one. If unsure, send all takes.</li>
+      </ul>
+      <div class="setup-note">The hook is the most important line in every video. Don't rush it and don't soften it - let it land before you move on.</div>
+    </div>
+  </div>
+</div>
+
+<!-- DISCLAIMER SECTION -->
+<div id="disclaimer" class="disclaimer-section">
+  <span class="section-label">Closing Disclaimer - Pick One Per Video</span>
+  <p class="disclaimer-intro">Every video closes with a disclaimer. Keep it natural - deliver it like you would any other line, not like a legal read. Pick whichever one feels right for the video you just filmed. All three work.</p>
+  <div class="disclaimer-options">
+    <div class="disclaimer-option">
+      <span class="disclaimer-option-label">Option 1 - Recommended</span>
+      <p>"Not advice, just perspective - your situation is unique, let's talk about it."</p>
+    </div>
+    <div class="disclaimer-option">
+      <span class="disclaimer-option-label">Option 2</span>
+      <p>"This is our take, not personalized advice - reach out if you want to dig into your specific situation."</p>
+    </div>
+    <div class="disclaimer-option">
+      <span class="disclaimer-option-label">Option 3</span>
+      <p>"Everything we share is our opinion - for advice specific to you, let's have a real conversation."</p>
+    </div>
+  </div>
+  <p class="disclaimer-note">For shorter 20 second reels, Option 1 flows best. For longer duo videos, Option 3 lands well delivered together at the end.</p>
+</div>
+
+<!-- BUCKET 1 - ACQUISITION EXIT -->
+<div id="bucket1">
+  <div class="bucket-header">
+    <div class="bucket-number">01</div>
+    <div class="bucket-info">
+      <h2>The Acquisition Exit</h2>
+      <p>3-Part Series &nbsp;·&nbsp; Pillar: Founder/Entrepreneur &nbsp;·&nbsp; Film all three back to back</p>
+    </div>
+  </div>
+
+  <div class="series-band">
+    <span class="series-band-title">Part 1 of 3 - The Timeline</span>
+    <span class="series-band-sub">Duo &nbsp;·&nbsp; 40-45 seconds</span>
+  </div>
+  <div class="video-card">
+    <div class="card-header">
+      <div>
+        <div class="card-num">Video 01</div>
+        <div class="card-title">The Acquisition Exit - When to Start</div>
+      </div>
+      <div class="card-meta">
+        <span class="format-badge badge-duo">Duo</span>
+        <span class="length-badge">40-45 sec</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-left">
+        <span class="card-section-title">Gear</span>
+        <ul class="gear-list">
+          <li>Mic Mini on both</li>
+          <li>Tripod - both in frame</li>
+          <li>Ring light centered</li>
+        </ul>
+        <span class="card-section-title">Before you hit record</span>
+        <ul class="check-list">
+          <li>Both mics tested</li>
+          <li>Both in frame, equal space</li>
+          <li>Eyes in top third</li>
+          <li>Room quiet</li>
+          <li>Focus locked</li>
+        </ul>
+      </div>
+      <div class="card-right">
+        <div class="hook-block">
+          <span class="hook-label">Open with this - straight to camera, confident</span>
+          <div class="hook-text">"If your exit strategy is just selling when you're tired, you're already leaving money on the table."</div>
+        </div>
+        <span class="card-section-title">Script</span>
+        <div class="script-block">
+          <div class="script-speaker">Nichole</div>
+          <div class="script-line">Most founders we sit down with start thinking about their exit 6 months before they want out. By then half the leverage is gone.</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">Jalyn</div>
+          <div class="script-line">And what's wild is the founders I talk to are thinking about the exit before they even have consistent revenue. The problem isn't awareness - it's knowing what to actually do and when.</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">Nichole</div>
+          <div class="script-line">The window to maximize what you walk away with is years before the sale. Not months.</div>
+        </div>
+        <div class="disclaimer-closer">
+          <span class="disclaimer-closer-label">Close with one of these</span>
+          <div class="disclaimer-closer-options">
+            <div class="disclaimer-closer-option">Not advice, just perspective - your situation is unique, let's talk about it.</div>
+            <div class="disclaimer-closer-option">Everything we share is our opinion - for advice specific to you, let's have a real conversation.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="series-band">
+    <span class="series-band-title">Part 2 of 3 - What Needs to Be in Place</span>
+    <span class="series-band-sub">Nichole Solo &nbsp;·&nbsp; 40-45 seconds</span>
+  </div>
+  <div class="video-card">
+    <div class="card-header">
+      <div>
+        <div class="card-num">Video 02</div>
+        <div class="card-title">The Acquisition Exit - What Needs to Be in Place</div>
+      </div>
+      <div class="card-meta">
+        <span class="format-badge badge-nichole">Nichole Solo</span>
+        <span class="length-badge">40-45 sec</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-left">
+        <span class="card-section-title">Gear</span>
+        <ul class="gear-list">
+          <li>Mic Mini on Nichole</li>
+          <li>Tripod - single frame</li>
+          <li>Ring light on Nichole</li>
+        </ul>
+        <span class="card-section-title">Before you hit record</span>
+        <ul class="check-list">
+          <li>Mic tested</li>
+          <li>Professional backdrop</li>
+          <li>Eyes in top third</li>
+          <li>Room quiet</li>
+          <li>Focus locked</li>
+        </ul>
+      </div>
+      <div class="card-right">
+        <div class="hook-block">
+          <span class="hook-label">Open with this - straight to camera, deadpan</span>
+          <div class="hook-text">"Your accountant is keeping you compliant. But they're costing you thousands in exit planning."</div>
+        </div>
+        <span class="card-section-title">Script</span>
+        <div class="script-block">
+          <div class="script-speaker">Nichole</div>
+          <div class="script-line">Compliance and wealth strategy are two completely different conversations. Most founders don't realize that until they're deep in a deal and the numbers don't look the way they expected.</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">Nichole</div>
+          <div class="script-line">Before any acquisition closes there are three things that need to be in place on your personal side - your wealth structure separate from the business, your cap table cleaned up and documented, and a clear picture of what you actually walk away with after tax.</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">Nichole</div>
+          <div class="script-line">Most people find out what they're missing at the closing table. That's the worst time to find out.</div>
+        </div>
+        <div class="disclaimer-closer">
+          <span class="disclaimer-closer-label">Close with one of these</span>
+          <div class="disclaimer-closer-options">
+            <div class="disclaimer-closer-option">Not advice, just perspective - your situation is unique, let's talk about it.</div>
+            <div class="disclaimer-closer-option">This is our take, not personalized advice - reach out if you want to dig into your specific situation.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="series-band">
+    <span class="series-band-title">Part 3 of 3 - Life After the Exit</span>
+    <span class="series-band-sub">Jalyn Solo &nbsp;·&nbsp; 20-25 seconds</span>
+  </div>
+  <div class="video-card">
+    <div class="card-header">
+      <div>
+        <div class="card-num">Video 03</div>
+        <div class="card-title">The Acquisition Exit - Life After</div>
+      </div>
+      <div class="card-meta">
+        <span class="format-badge badge-jalyn">Jalyn Solo</span>
+        <span class="length-badge">20-25 sec</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-left">
+        <span class="card-section-title">Gear</span>
+        <ul class="gear-list">
+          <li>Mic Mini on Jalyn</li>
+          <li>Tripod - single frame</li>
+          <li>Ring light on Jalyn</li>
+        </ul>
+        <span class="card-section-title">Before you hit record</span>
+        <ul class="check-list">
+          <li>Mic tested</li>
+          <li>Warm approachable backdrop</li>
+          <li>Eyes in top third</li>
+          <li>Room quiet</li>
+          <li>Focus locked</li>
+        </ul>
+      </div>
+      <div class="card-right">
+        <div class="hook-block">
+          <span class="hook-label">Open with this - personal, let it breathe</span>
+          <div class="hook-text">"Everyone plans the sale. Nobody plans who they are after it."</div>
+        </div>
+        <span class="card-section-title">Script</span>
+        <div class="script-block">
+          <div class="script-speaker">Jalyn</div>
+          <div class="script-line">I talk to founders who've spent years building something and when the exit finally happens - the money is there, the deal closed, everything went right - and they don't know what to do on Monday morning.</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">Jalyn</div>
+          <div class="script-line">The financial plan is one thing. The life plan is another. Both matter.</div>
+        </div>
+        <div class="disclaimer-closer">
+          <span class="disclaimer-closer-label">Close with this</span>
+          <div class="disclaimer-closer-options">
+            <div class="disclaimer-closer-option">Not advice, just perspective - your situation is unique, let's talk about it.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BUCKET 2 - REVENUE VS WEALTH -->
+<div id="bucket2">
+  <div class="bucket-header">
+    <div class="bucket-number">02</div>
+    <div class="bucket-info">
+      <h2>Revenue vs Wealth</h2>
+      <p>2-Part Series &nbsp;·&nbsp; Pillar: Founder/Entrepreneur &nbsp;·&nbsp; Film both back to back</p>
+    </div>
+  </div>
+
+  <div class="series-band">
+    <span class="series-band-title">Part 1 of 2 - The Problem</span>
+    <span class="series-band-sub">Duo &nbsp;·&nbsp; 40-45 seconds</span>
+  </div>
+  <div class="video-card">
+    <div class="card-header">
+      <div>
+        <div class="card-num">Video 04</div>
+        <div class="card-title">Revenue vs Wealth - Why It Happens</div>
+      </div>
+      <div class="card-meta">
+        <span class="format-badge badge-duo">Duo</span>
+        <span class="length-badge">40-45 sec</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-left">
+        <span class="card-section-title">Gear</span>
+        <ul class="gear-list">
+          <li>Mic Mini on both</li>
+          <li>Tripod - both in frame</li>
+          <li>Ring light centered</li>
+        </ul>
+        <span class="card-section-title">Before you hit record</span>
+        <ul class="check-list">
+          <li>Both mics tested</li>
+          <li>Both in frame, equal space</li>
+          <li>Eyes in top third</li>
+          <li>Room quiet</li>
+          <li>Focus locked</li>
+        </ul>
+      </div>
+      <div class="card-right">
+        <div class="hook-block">
+          <span class="hook-label">Jalyn opens with this - direct, pointed</span>
+          <div class="hook-text">"Your biggest problem isn't revenue. It's that your business is making money and you're still not building wealth. Here's why."</div>
+        </div>
+        <span class="card-section-title">Script</span>
+        <div class="script-block">
+          <div class="script-speaker">Nichole</div>
+          <div class="script-line">I've sat across from business owners doing $2, $3, $5 million a year who can't tell you what their personal net worth is. The business looks great on paper. Their personal financial picture is a mess.</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">Jalyn</div>
+          <div class="script-line">And it's not because they're spending wrong - it's because revenue stays in the business and personal wealth never gets built intentionally. Nobody set up that bridge.</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">Nichole</div>
+          <div class="script-line">Revenue is what the business makes. Wealth is what you keep. Those are two separate systems and most owners only build one.</div>
+        </div>
+        <div class="disclaimer-closer">
+          <span class="disclaimer-closer-label">Close with one of these</span>
+          <div class="disclaimer-closer-options">
+            <div class="disclaimer-closer-option">Not advice, just perspective - your situation is unique, let's talk about it.</div>
+            <div class="disclaimer-closer-option">Everything we share is our opinion - for advice specific to you, let's have a real conversation.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="series-band">
+    <span class="series-band-title">Part 2 of 2 - What to Do About It</span>
+    <span class="series-band-sub">Jalyn Solo &nbsp;·&nbsp; 20-25 seconds</span>
+  </div>
+  <div class="video-card">
+    <div class="card-header">
+      <div>
+        <div class="card-num">Video 05</div>
+        <div class="card-title">Revenue vs Wealth - What to Do</div>
+      </div>
+      <div class="card-meta">
+        <span class="format-badge badge-jalyn">Jalyn Solo</span>
+        <span class="length-badge">20-25 sec</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-left">
+        <span class="card-section-title">Gear</span>
+        <ul class="gear-list">
+          <li>Mic Mini on Jalyn</li>
+          <li>Tripod - single frame</li>
+          <li>Ring light on Jalyn</li>
+        </ul>
+        <span class="card-section-title">Before you hit record</span>
+        <ul class="check-list">
+          <li>Mic tested</li>
+          <li>Different backdrop from Video 04</li>
+          <li>Eyes in top third</li>
+          <li>Room quiet</li>
+          <li>Focus locked</li>
+        </ul>
+      </div>
+      <div class="card-right">
+        <div class="hook-block">
+          <span class="hook-label">Open with this - confident, no hesitation</span>
+          <div class="hook-text">"You don't have a revenue problem. You have a wealth problem. And your P&L is hiding it."</div>
+        </div>
+        <span class="card-section-title">Script</span>
+        <div class="script-block">
+          <div class="script-speaker">Jalyn</div>
+          <div class="script-line">Your business financials and your personal finances are two different conversations. Most owners only ever have one of them.</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">Jalyn</div>
+          <div class="script-line">Paying yourself consistently, building personal assets outside the business, knowing what you actually own - that's where wealth gets built. Not in the revenue line.</div>
+        </div>
+        <div class="disclaimer-closer">
+          <span class="disclaimer-closer-label">Close with this</span>
+          <div class="disclaimer-closer-options">
+            <div class="disclaimer-closer-option">Not advice, just perspective - your situation is unique, let's talk about it.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BUCKET 3 - 401K / LAYOFF / BONUS -->
+<div id="bucket3">
+  <div class="bucket-header">
+    <div class="bucket-number">03</div>
+    <div class="bucket-info">
+      <h2>Life Moments</h2>
+      <p>3 Standalone Videos &nbsp;·&nbsp; Pillar: Personal/Life in Balance</p>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <div class="card-header">
+      <div>
+        <div class="card-num">Video 06</div>
+        <div class="card-title">Old 401k - What Are Your Options</div>
+      </div>
+      <div class="card-meta">
+        <span class="format-badge badge-nichole">Nichole Solo</span>
+        <span class="length-badge">40-45 sec</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-left">
+        <span class="card-section-title">Gear</span>
+        <ul class="gear-list">
+          <li>Mic Mini on Nichole</li>
+          <li>Tripod - single frame</li>
+          <li>Ring light on Nichole</li>
+        </ul>
+        <span class="card-section-title">Before you hit record</span>
+        <ul class="check-list">
+          <li>Mic tested</li>
+          <li>Clean professional backdrop</li>
+          <li>Eyes in top third</li>
+          <li>Room quiet</li>
+          <li>Focus locked</li>
+        </ul>
+      </div>
+      <div class="card-right">
+        <div class="hook-block">
+          <span class="hook-label">Open with this - pause after you say it</span>
+          <div class="hook-text">"Stop maxing out your 401k until you watch this."</div>
+        </div>
+        <span class="card-section-title">Script</span>
+        <div class="script-block">
+          <div class="script-speaker">Nichole</div>
+          <div class="script-line">When you leave a job most people do one of four things with their old 401k - leave it, roll it, cash it, or forget it entirely. Each one has a completely different tax consequence and most people pick based on whatever's easiest in the moment.</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">Nichole</div>
+          <div class="script-line">Cashing it out triggers income tax plus a 10% penalty if you're under 59 and a half. Leaving it behind means you're not in control of how it's invested. Rolling it into your new employer's plan may limit your options. Rolling it into an IRA gives you the most flexibility and control.</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">Nichole</div>
+          <div class="script-line">The right move depends on your full picture - not just this account.</div>
+        </div>
+        <div class="disclaimer-closer">
+          <span class="disclaimer-closer-label">Close with one of these</span>
+          <div class="disclaimer-closer-options">
+            <div class="disclaimer-closer-option">Not advice, just perspective - your situation is unique, let's talk about it.</div>
+            <div class="disclaimer-closer-option">This is our take, not personalized advice - reach out if you want to dig into your specific situation.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <div class="card-header">
+      <div>
+        <div class="card-num">Video 07</div>
+        <div class="card-title">Layoff Just Hit - First 30 Days</div>
+      </div>
+      <div class="card-meta">
+        <span class="format-badge badge-jalyn">Jalyn Solo</span>
+        <span class="length-badge">20-25 sec</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-left">
+        <span class="card-section-title">Gear</span>
+        <ul class="gear-list">
+          <li>Mic Mini on Jalyn</li>
+          <li>Tripod - single frame</li>
+          <li>Ring light on Jalyn</li>
+        </ul>
+        <span class="card-section-title">Before you hit record</span>
+        <ul class="check-list">
+          <li>Mic tested</li>
+          <li>Warm relatable backdrop</li>
+          <li>Eyes in top third</li>
+          <li>Room quiet</li>
+          <li>Focus locked</li>
+        </ul>
+      </div>
+      <div class="card-right">
+        <div class="hook-block">
+          <span class="hook-label">Open with this - empathetic but direct</span>
+          <div class="hook-text">"Nobody prepares you for the first 30 days after a layoff. Here's the checklist I wish existed."</div>
+        </div>
+        <span class="card-section-title">Script</span>
+        <div class="script-block">
+          <div class="script-speaker">Jalyn</div>
+          <div class="script-line">Day one - file for unemployment, don't wait. Day two - know exactly what your monthly expenses are, not a guess, the real number. Week one - understand your health insurance options before your coverage lapses.</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">Jalyn</div>
+          <div class="script-line">Do not touch your retirement accounts. The penalties will hurt more than they help. And before you take the first offer that comes in - know what your finances can actually handle. That changes everything about how you negotiate next.</div>
+        </div>
+        <div class="disclaimer-closer">
+          <span class="disclaimer-closer-label">Close with this</span>
+          <div class="disclaimer-closer-options">
+            <div class="disclaimer-closer-option">Not advice, just perspective - your situation is unique, let's talk about it.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <div class="card-header">
+      <div>
+        <div class="card-num">Video 08</div>
+        <div class="card-title">Bonus Just Hit - What to Actually Do</div>
+      </div>
+      <div class="card-meta">
+        <span class="format-badge badge-duo">Duo</span>
+        <span class="length-badge">40-45 sec</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-left">
+        <span class="card-section-title">Gear</span>
+        <ul class="gear-list">
+          <li>Mic Mini on both</li>
+          <li>Tripod - both in frame</li>
+          <li>Ring light centered</li>
+        </ul>
+        <span class="card-section-title">Before you hit record</span>
+        <ul class="check-list">
+          <li>Both mics tested</li>
+          <li>Both in frame, equal space</li>
+          <li>Eyes in top third</li>
+          <li>Room quiet</li>
+          <li>Focus locked</li>
+        </ul>
+      </div>
+      <div class="card-right">
+        <div class="hook-block">
+          <span class="hook-label">Nichole opens with this - let the last line land</span>
+          <div class="hook-text">"Your bonus just hit. And your bank is hoping you do exactly what you're about to do."</div>
+        </div>
+        <span class="card-section-title">Script</span>
+        <div class="script-block">
+          <div class="script-speaker">Jalyn</div>
+          <div class="script-line">Most people treat a bonus like found money - it feels different from a paycheck so it gets spent differently. A trip, something for the house, a little lifestyle upgrade. And then it's gone.</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">Nichole</div>
+          <div class="script-line">A bonus is the single best opportunity most people get to move the needle on their financial picture. Before you spend a dollar of it - know your tax hit, know what percentage is going toward something that compounds, and know what you're actually keeping.</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">Jalyn</div>
+          <div class="script-line">Spend what you want. But decide first, don't discover it later.</div>
+        </div>
+        <div class="disclaimer-closer">
+          <span class="disclaimer-closer-label">Close with one of these</span>
+          <div class="disclaimer-closer-options">
+            <div class="disclaimer-closer-option">Not advice, just perspective - your situation is unique, let's talk about it.</div>
+            <div class="disclaimer-closer-option">Everything we share is our opinion - for advice specific to you, let's have a real conversation.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BUCKET 4 - MID YEAR CHECK IN -->
+<div id="bucket4">
+  <div class="bucket-header">
+    <div class="bucket-number">04</div>
+    <div class="bucket-info">
+      <h2>Mid-Year Check In</h2>
+      <p>2 Standalone Videos &nbsp;·&nbsp; Pillar: WestPac/Credibility &nbsp;·&nbsp; Timely - film these last</p>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <div class="card-header">
+      <div>
+        <div class="card-num">Video 09</div>
+        <div class="card-title">Mid-Year Check In - Nichole's Take</div>
+      </div>
+      <div class="card-meta">
+        <span class="format-badge badge-nichole">Nichole Solo</span>
+        <span class="length-badge">40-45 sec</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-left">
+        <span class="card-section-title">Gear</span>
+        <ul class="gear-list">
+          <li>Mic Mini on Nichole</li>
+          <li>Tripod - single frame</li>
+          <li>Ring light on Nichole</li>
+        </ul>
+        <span class="card-section-title">Before you hit record</span>
+        <ul class="check-list">
+          <li>Mic tested</li>
+          <li>Professional backdrop</li>
+          <li>Eyes in top third</li>
+          <li>Room quiet</li>
+          <li>Focus locked</li>
+        </ul>
+      </div>
+      <div class="card-right">
+        <div class="hook-block">
+          <span class="hook-label">Open with this - own it, you're the expert</span>
+          <div class="hook-text">"I'm a financial advisor and I think your budgeting app is a complete waste of time. Here's what actually works."</div>
+        </div>
+        <span class="card-section-title">Script</span>
+        <div class="script-block">
+          <div class="script-speaker">Nichole</div>
+          <div class="script-line">Budgeting apps track what already happened. That's not a financial plan - that's a receipt.</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">Nichole</div>
+          <div class="script-line">A real mid-year check in looks at three things. Are you on track to hit your savings target for the year - not your spending limit. Is your investment allocation still aligned with where you want to be in 10 years. And did anything change this year - income, family, business - that your financial plan doesn't reflect yet.</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">Nichole</div>
+          <div class="script-line">July is the best time to course correct. You still have 6 months.</div>
+        </div>
+        <div class="disclaimer-closer">
+          <span class="disclaimer-closer-label">Close with one of these</span>
+          <div class="disclaimer-closer-options">
+            <div class="disclaimer-closer-option">Not advice, just perspective - your situation is unique, let's talk about it.</div>
+            <div class="disclaimer-closer-option">This is our take, not personalized advice - reach out if you want to dig into your specific situation.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <div class="card-header">
+      <div>
+        <div class="card-num">Video 10</div>
+        <div class="card-title">Mid-Year Check In - Jalyn's Take</div>
+      </div>
+      <div class="card-meta">
+        <span class="format-badge badge-jalyn">Jalyn Solo</span>
+        <span class="length-badge">20-25 sec</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-left">
+        <span class="card-section-title">Gear</span>
+        <ul class="gear-list">
+          <li>Mic Mini on Jalyn</li>
+          <li>Tripod - single frame</li>
+          <li>Ring light on Jalyn</li>
+        </ul>
+        <span class="card-section-title">Before you hit record</span>
+        <ul class="check-list">
+          <li>Mic tested</li>
+          <li>Different backdrop from Video 09</li>
+          <li>Eyes in top third</li>
+          <li>Room quiet</li>
+          <li>Focus locked</li>
+        </ul>
+      </div>
+      <div class="card-right">
+        <div class="hook-block">
+          <span class="hook-label">Open with this - urgent, not anxious</span>
+          <div class="hook-text">"We're already in July. If you haven't done this one thing yet you're already behind."</div>
+        </div>
+        <span class="card-section-title">Script</span>
+        <div class="script-block">
+          <div class="script-speaker">Jalyn</div>
+          <div class="script-line">A mid-year financial check in isn't complicated. It's one hour, one question - is what I'm doing right now actually going to get me where I want to be by December?</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">Jalyn</div>
+          <div class="script-line">Most people don't do it because it feels big. It's not. It's just a conversation with your numbers. And if you don't like what you see, you still have time to fix it.</div>
+        </div>
+        <div class="disclaimer-closer">
+          <span class="disclaimer-closer-label">Close with this</span>
+          <div class="disclaimer-closer-options">
+            <div class="disclaimer-closer-option">Not advice, just perspective - your situation is unique, let's talk about it.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DELIVERY -->
+<div id="delivery" class="delivery-section">
+  <span class="section-label">Sending Footage</span>
+  <p style="font-size:14px; color:var(--gray); line-height:1.7; margin-bottom:20px;">Once you're done filming upload everything to the shared album at full resolution. No need to trim, rename, or compress anything. If you loved a take send that one. If you're not sure, send them all.</p>
+  <div class="folder-structure">
+    <div class="folder">📁 FBT Session 2</div>
+    <div class="sub">📁 Video 01 - Acquisition Exit Duo</div>
+    <div class="sub">📁 Video 02 - Acquisition Exit Nichole</div>
+    <div class="sub">📁 Video 03 - Acquisition Exit Jalyn</div>
+    <div class="sub">📁 Video 04 - Revenue vs Wealth Duo</div>
+    <div class="sub">📁 Video 05 - Revenue vs Wealth Jalyn</div>
+    <div class="sub">📁 Video 06 - 401k Nichole</div>
+    <div class="sub">📁 Video 07 - Layoff Jalyn</div>
+    <div class="sub">📁 Video 08 - Bonus Duo</div>
+    <div class="sub">📁 Video 09 - Mid Year Nichole</div>
+    <div class="sub">📁 Video 10 - Mid Year Jalyn</div>
+  </div>
+  <p class="delivery-note">Target: footage uploaded by end of day. That keeps us on schedule and content flowing through late August.</p>
+</div>
+
+<div class="doc-footer">
+  <p>Financial Balance Today &nbsp;·&nbsp; Session 2</p>
+  <a href="mailto:marcus.synegal@gmail.com">Questions? marcus.synegal@gmail.com</a>
+</div>
+
+</body>
+</html>
