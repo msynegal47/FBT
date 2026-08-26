@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FINANCIAL BALANCE TODAY Filming Guide - Session 3</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1C2B3A;      /* dominant/dark brand color - headers, hook blocks, nav hover */
+    --accent: #C9967F;        /* secondary brand color - section labels, dividers */
+    --accent-light: #E2C9BB;
+    --highlight: #C9A96E;  /* tertiary accent - bullets, borders */
+    --bg: #FAF7F2;                /* page background */
+    --white: #FFFFFF;
+    --gray: #8A8078;
+    --light-gray: #F0EBE5;
+    --border: #E2D9D2;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    color: var(--primary);
+    padding: 40px 24px;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .top-nav { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 48px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+  .nav-link { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); text-decoration: none; padding: 6px 14px; border: 1px solid var(--border); border-radius: 100px; transition: all 0.2s; }
+  .nav-link:hover { background: var(--primary); color: var(--white); border-color: var(--primary); }
+
+  .page-header { margin-bottom: 56px; }
+  .page-eyebrow { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--highlight); margin-bottom: 12px; display: block; }
+  .page-title { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 600; color: var(--primary); line-height: 1.1; margin-bottom: 8px; }
+  .page-subtitle { font-size: 14px; color: var(--gray); }
+
+  .section-label { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid var(--accent-light); display: block; }
+
+  .setup-section { background: var(--white); border: 1px solid var(--border); border-top: 3px solid var(--primary); padding: 40px; margin-bottom: 40px; }
+  .setup-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 28px; }
+  .setup-block h3 { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+  .setup-block ul { list-style: none; }
+  .setup-block ul li { font-size: 13px; color: var(--gray); padding: 7px 0; border-bottom: 1px solid var(--light-gray); display: flex; gap: 10px; line-height: 1.5; }
+  .setup-block ul li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--highlight); flex-shrink: 0; margin-top: 7px; }
+  .setting-row { display: flex; justify-content: space-between; align-items: baseline; padding: 7px 0; border-bottom: 1px solid var(--light-gray); gap: 16px; }
+  .setting-label { font-size: 12px; font-weight: 500; color: var(--primary); flex-shrink: 0; }
+  .setting-value { font-size: 12px; color: var(--gray); text-align: right; }
+  .setup-note { background: var(--light-gray); padding: 14px 18px; margin-top: 16px; font-size: 12px; color: var(--gray); font-style: italic; line-height: 1.6; border-left: 2px solid var(--accent); }
+
+  /* DISCLAIMER / COMPLIANCE SECTION - only for regulated clients. Delete this whole block + the HTML section for non-regulated clients. */
+  .disclaimer-section { background: var(--white); border: 1px solid var(--border); border-top: 3px solid var(--highlight); padding: 40px; margin-bottom: 40px; }
+  .disclaimer-intro { font-size: 14px; color: var(--gray); line-height: 1.7; margin-bottom: 24px; }
+  .disclaimer-options { display: flex; flex-direction: column; gap: 12px; }
+  .disclaimer-option { background: var(--light-gray); padding: 16px 20px; border-left: 3px solid var(--highlight); }
+  .disclaimer-option-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--highlight); margin-bottom: 6px; display: block; }
+  .disclaimer-option p { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-style: italic; color: var(--primary); line-height: 1.6; }
+  .disclaimer-note { font-size: 12px; color: var(--gray); margin-top: 16px; font-style: italic; }
+
+  /* SERIES BADGE - use only for multi-part videos, omit for standalones */
+  .series-band { background: var(--primary); padding: 12px 32px; margin-bottom: 2px; display: flex; align-items: center; justify-content: space-between; }
+  .series-band-title { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--highlight); }
+  .series-band-sub { font-size: 11px; color: rgba(255,255,255,0.4); }
+
+  .bucket-header { margin: 56px 0 4px; display: flex; align-items: center; gap: 16px; }
+  .bucket-number { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 400; color: var(--accent-light); line-height: 1; flex-shrink: 0; }
+  .bucket-info h2 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--primary); }
+  .bucket-info p { font-size: 12px; color: var(--gray); margin-top: 4px; }
+
+  .video-card { background: var(--white); border: 1px solid var(--border); margin-bottom: 24px; }
+  .card-header { padding: 24px 32px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .card-num { font-family: 'Cormorant Garamond', serif; font-size: 13px; color: var(--accent); letter-spacing: 0.1em; }
+  .card-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--primary); flex: 1; }
+  .card-meta { display: flex; gap: 8px; align-items: center; flex-shrink: 0; flex-wrap: wrap; justify-content: flex-end; }
+  .format-badge { font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; padding: 5px 14px; border-radius: 100px; }
+  /* Add one .badge-{talent} rule per person/format on camera - rotate through primary/accent/highlight */
+  .badge-a { background: var(--primary); color: var(--white); }
+  .badge-b { background: var(--accent); color: var(--white); }
+  .badge-c { background: var(--highlight); color: var(--white); }
+  .length-badge { font-size: 10px; color: var(--gray); background: var(--light-gray); padding: 5px 12px; border-radius: 100px; }
+
+  .card-body { padding: 28px 32px; display: grid; grid-template-columns: 200px 1fr; gap: 32px; }
+  .card-section-title { font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; display: block; }
+
+  .gear-list, .check-list { list-style: none; margin-bottom: 24px; }
+  .gear-list li, .check-list li { font-size: 12px; color: var(--gray); padding: 6px 0; border-bottom: 1px solid var(--light-gray); display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; }
+  .gear-list li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--highlight); flex-shrink: 0; margin-top: 6px; }
+  .check-list li::before { content: '☐'; font-size: 13px; color: var(--accent); flex-shrink: 0; line-height: 1.3; }
+
+  .hook-block { background: var(--primary); padding: 16px 20px; margin-bottom: 20px; }
+  .hook-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--highlight); margin-bottom: 8px; display: block; }
+  .hook-text { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; color: var(--white); line-height: 1.4; }
+
+  .script-block { margin-bottom: 14px; }
+  .script-speaker { font-size: 9px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+  .script-line { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-style: italic; color: var(--primary); line-height: 1.65; padding-left: 12px; border-left: 2px solid var(--accent-light); }
+
+  /* DISCLAIMER CLOSER - omit if no compliance language needed */
+  .disclaimer-closer { margin-top: 20px; padding: 14px 18px; background: var(--light-gray); border-left: 3px solid var(--highlight); }
+  .disclaimer-closer-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--highlight); margin-bottom: 8px; display: block; }
+  .disclaimer-closer-options { display: flex; flex-direction: column; gap: 6px; }
+  .disclaimer-closer-option { font-size: 13px; color: var(--gray); font-style: italic; display: flex; gap: 8px; align-items: flex-start; }
+  .disclaimer-closer-option::before { content: '›'; color: var(--highlight); flex-shrink: 0; font-style: normal; }
+
+  .delivery-section { background: var(--white); border: 1px solid var(--border); border-top: 3px solid var(--accent); padding: 40px; margin-top: 56px; }
+  .folder-structure { background: var(--primary); padding: 24px 28px; margin-top: 20px; font-family: monospace; font-size: 13px; color: rgba(255,255,255,0.85); line-height: 2; border-radius: 2px; }
+  .folder-structure .folder { color: var(--highlight); }
+  .folder-structure .sub { padding-left: 24px; color: rgba(255,255,255,0.6); }
+  .delivery-note { font-size: 13px; color: var(--gray); line-height: 1.7; margin-top: 20px; }
+
+  .doc-footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+  .doc-footer p { font-size: 12px; color: var(--gray); }
+  .doc-footer a { font-size: 12px; color: var(--accent); text-decoration: none; }
+
+  @media (max-width: 600px) {
+    .card-body { grid-template-columns: 1fr; }
+    .setup-grid { grid-template-columns: 1fr; }
+    .card-header { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV: one link per bucket, plus setup/disclaimer/delivery. Keep hrefs and section ids in sync. -->
+<nav class="top-nav">
+  <a href="#setup" class="nav-link">Setup</a>
+  <a href="#disclaimer" class="nav-link">Disclaimer</a>
+  <a href="#bucket1" class="nav-link">Business Owner Tax Strategy</a>
+  <a href="#bucket2" class="nav-link">How I Think About It</a>
+  <a href="#bucket3" class="nav-link">Monday Market Recap</a>
+  <a href="#delivery" class="nav-link">Sending Footage</a>
+</nav>
+
+<div class="page-header">
+  <span class="page-eyebrow">FINANCIAL BALANCE TODAY - Session 3</span>
+  <h1 class="page-title">Filming Guide</h1>
+  <p class="page-subtitle">6 Videos &nbsp;·&nbsp; 2 Buckets &nbsp;·&nbsp; 1 Weekly Standing Segment &nbsp;·&nbsp; Duo + Solo Mix</p>
+</div>
+
+<!-- SETUP: 4 blocks is the default (Camera, Framing, Audio, Delivery Notes). Swap content per client's gear, keep the 2x2 grid. -->
+<div id="setup" class="setup-section">
+  <span class="section-label">Before You Start - Read Once</span>
+  <div class="setup-grid">
+    <div class="setup-block">
+      <h3>Camera (iPhone 16 Pro)</h3>
+      <div class="setting-row"><span class="setting-label">Resolution</span><span class="setting-value">4K, 30fps</span></div>
+      <div class="setting-row"><span class="setting-label">Format</span><span class="setting-value">ProRes off, standard</span></div>
+      <div class="setting-row"><span class="setting-label">Stabilization</span><span class="setting-value">Action mode ON</span></div>
+      <div class="setting-row"><span class="setting-label">Orientation</span><span class="setting-value">Vertical (9:16)</span></div>
+      <div class="setup-note">Same setup as Session 1 and 2. If anything moved, re-check exposure and reset the framing guide.</div>
+    </div>
+    <div class="setup-block">
+      <h3>Framing</h3>
+      <ul>
+        <li>Chest-up framing, same as prior sessions</li>
+        <li>Eyeline just above the lens, not down at the screen</li>
+        <li>Leave headroom, don't crop the top of the frame tight</li>
+        <li>Duo shots: both people visible, don't let one lean out of frame</li>
+      </ul>
+    </div>
+    <div class="setup-block">
+      <h3>Audio</h3>
+      <ul>
+        <li>Lav mic connected and tested before first take</li>
+        <li>Close windows/doors, check for HVAC hum</li>
+      </ul>
+    </div>
+    <div class="setup-block">
+      <h3>Delivery Notes</h3>
+      <ul>
+        <li>Confident, not rushed - let the hook land before continuing</li>
+        <li>These are technical topics - slow down slightly on numbers so they're easy to caption/subtitle accurately</li>
+        <li>Re-take if a line feels stiff, don't force it</li>
+      </ul>
+      </div>
+  </div>
+</div>
+
+<!-- DISCLAIMER SECTION - only for regulated clients (financial, legal, medical). Delete entirely otherwise. -->
+<div id="disclaimer" class="disclaimer-section">
+  <span class="section-label">Closing Disclaimer - Pick One Per Video</span>
+  <p class="disclaimer-intro">Every video needs a compliance disclaimer read at the end. Pick whichever option fits the pacing of the video naturally.</p>
+  <div class="disclaimer-options">
+    <div class="disclaimer-option">
+      <span class="disclaimer-option-label">Option 1 (Recommended)</span>
+      <p>"Not advice, just perspective - your situation is unique, let's talk about it."</p>
+    </div>
+    <div class="disclaimer-option">
+      <span class="disclaimer-option-label">Option 2</span>
+      <p>"This is our take, not personalized advice - reach out if you want to dig into your specific situation."</p>
+    </div>
+    <div class="disclaimer-option">
+      <span class="disclaimer-option-label">Option 3</span>
+      <p>"Everything we share is our opinion - for advice specific to you, let's have a real conversation."</p>
+    </div>
+  </div>
+  <p class="disclaimer-note">Say it plainly, not rushed. It should sound like a natural close, not a legal read. These topics are technical - resist the urge to over-explain past the script, the disclaimer covers the rest.</p>
+</div>
+
+<!-- BUCKET (repeat whole block once per content bucket/theme) -->
+<div id="bucket1">
+  <div class="bucket-header">
+    <div class="bucket-number">01</div>
+    <div class="bucket-info">
+      <h2>Business Owner Tax Strategy</h2>
+      <p>3 videos - Duo, Nichole Solo, Jalyn Solo. Topics from Jalyn.</p>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <div class="card-header">
+      <div>
+        <div class="card-num">Video 01</div>
+        <div class="card-title">S-Corp vs. C-Corp</div>
+      </div>
+      <div class="card-meta">
+        <span class="format-badge badge-a">Duo</span>
+        <span class="length-badge">0:35-0:50</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-left">
+        <span class="card-section-title">Gear</span>
+        <ul class="gear-list">
+          <li>Tripod, chest-height</li>
+          <li>Lav mic(s)</li>
+          <li>Ring light if natural light is flat</li>
+          <li>Second lav mic for the other speaker</li>
+        </ul>
+        <span class="card-section-title">Before you hit record</span>
+        <ul class="check-list">
+          <li>Room tone recorded</li>
+          <li>Hook line rehearsed once, not memorized word for word</li>
+          <li>Phone on airplane mode / DND</li>
+          <li>Framing double-checked against Session 2 reference</li>
+        </ul>
+      </div>
+      <div class="card-right">
+        <div class="hook-block">
+          <span class="hook-label">Open with this - conversational, back-and-forth pacing</span>
+          <div class="hook-text">"The tax difference between an S-Corp and a C-Corp can run into tens of thousands of dollars a year."</div>
+        </div>
+        <span class="card-section-title">Script</span>
+        <div class="script-block">
+          <div class="script-speaker">NICHOLE</div>
+          <div class="script-line">The tax difference between an S-Corp and a C-Corp can run into tens of thousands of dollars a year.</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">JALYN</div>
+          <div class="script-line">And most business owners never revisit the choice after their first year of filing.</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">NICHOLE</div>
+          <div class="script-line">Your business today isn't the business you started. The right structure five years ago might be costing you now.</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">JALYN</div>
+          <div class="script-line">When's the last time you actually looked at this with someone?</div>
+        </div>
+        <div class="disclaimer-closer">
+          <span class="disclaimer-closer-label">Close with one of these</span>
+          <div class="disclaimer-closer-options">
+            <div class="disclaimer-closer-option">"Not advice, just perspective - your situation is unique, let's talk about it."</div>
+            <div class="disclaimer-closer-option">"This is our take, not personalized advice - reach out if you want to dig into your specific situation."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <div class="card-header">
+      <div>
+        <div class="card-num">Video 02</div>
+        <div class="card-title">Defined Benefit Plans for Business Owners</div>
+      </div>
+      <div class="card-meta">
+        <span class="format-badge badge-b">Nichole Solo</span>
+        <span class="length-badge">0:30-0:45</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-left">
+        <span class="card-section-title">Gear</span>
+        <ul class="gear-list">
+          <li>Tripod, chest-height</li>
+          <li>Lav mic(s)</li>
+          <li>Ring light if natural light is flat</li>
+        </ul>
+        <span class="card-section-title">Before you hit record</span>
+        <ul class="check-list">
+          <li>Room tone recorded</li>
+          <li>Hook line rehearsed once, not memorized word for word</li>
+          <li>Phone on airplane mode / DND</li>
+          <li>Framing double-checked against Session 2 reference</li>
+        </ul>
+      </div>
+      <div class="card-right">
+        <div class="hook-block">
+          <span class="hook-label">Open with this - authoritative, this is her area of expertise</span>
+          <div class="hook-text">"A defined benefit plan can let a business owner put away more than $300,000 a year, pre-tax."</div>
+        </div>
+        <span class="card-section-title">Script</span>
+        <div class="script-block">
+          <div class="script-speaker">NICHOLE</div>
+          <div class="script-line">A defined benefit plan can let a business owner put away more than $300,000 a year, pre-tax.</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">NICHOLE</div>
+          <div class="script-line">Most high earners have never even heard of it because it's not something a standard 401k conversation covers.</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">NICHOLE</div>
+          <div class="script-line">If you're a business owner in your peak earning years, this is worth twenty minutes of your time to understand.</div>
+        </div>
+        <div class="disclaimer-closer">
+          <span class="disclaimer-closer-label">Close with one of these</span>
+          <div class="disclaimer-closer-options">
+            <div class="disclaimer-closer-option">"Not advice, just perspective - your situation is unique, let's talk about it."</div>
+            <div class="disclaimer-closer-option">"This is our take, not personalized advice - reach out if you want to dig into your specific situation."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <div class="card-header">
+      <div>
+        <div class="card-num">Video 03</div>
+        <div class="card-title">Roth vs. Pre-Tax Contributions</div>
+      </div>
+      <div class="card-meta">
+        <span class="format-badge badge-c">Jalyn Solo</span>
+        <span class="length-badge">0:25-0:40</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-left">
+        <span class="card-section-title">Gear</span>
+        <ul class="gear-list">
+          <li>Tripod, chest-height</li>
+          <li>Lav mic(s)</li>
+          <li>Ring light if natural light is flat</li>
+        </ul>
+        <span class="card-section-title">Before you hit record</span>
+        <ul class="check-list">
+          <li>Room tone recorded</li>
+          <li>Hook line rehearsed once, not memorized word for word</li>
+          <li>Phone on airplane mode / DND</li>
+          <li>Framing double-checked against Session 2 reference</li>
+        </ul>
+      </div>
+      <div class="card-right">
+        <div class="hook-block">
+          <span class="hook-label">Open with this - relatable, framing it as a real choice people face</span>
+          <div class="hook-text">"Pick pre-tax now or Roth and pay taxes later. Get it wrong and it can cost you six figures over a lifetime."</div>
+        </div>
+        <span class="card-section-title">Script</span>
+        <div class="script-block">
+          <div class="script-speaker">JALYN</div>
+          <div class="script-line">Pick pre-tax now or Roth and pay taxes later. Get it wrong and it can cost you six figures over a lifetime.</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">JALYN</div>
+          <div class="script-line">It's not a one-size answer. It depends on your tax bracket now versus where you expect to land later.</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">JALYN</div>
+          <div class="script-line">Do you actually know which one you're using right now, or did you just pick the default?</div>
+        </div>
+        <div class="disclaimer-closer">
+          <span class="disclaimer-closer-label">Close with one of these</span>
+          <div class="disclaimer-closer-options">
+            <div class="disclaimer-closer-option">"Not advice, just perspective - your situation is unique, let's talk about it."</div>
+            <div class="disclaimer-closer-option">"This is our take, not personalized advice - reach out if you want to dig into your specific situation."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="bucket2">
+  <div class="bucket-header">
+    <div class="bucket-number">02</div>
+    <div class="bucket-info">
+      <h2>How I Think About It</h2>
+      <p>3 videos - Duo, Nichole Solo, Jalyn Solo. Topics from Jalyn.</p>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <div class="card-header">
+      <div>
+        <div class="card-num">Video 04</div>
+        <div class="card-title">Accumulation Years vs. Retirement Income</div>
+      </div>
+      <div class="card-meta">
+        <span class="format-badge badge-a">Duo</span>
+        <span class="length-badge">0:35-0:50</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-left">
+        <span class="card-section-title">Gear</span>
+        <ul class="gear-list">
+          <li>Tripod, chest-height</li>
+          <li>Lav mic(s)</li>
+          <li>Ring light if natural light is flat</li>
+          <li>Second lav mic for the other speaker</li>
+        </ul>
+        <span class="card-section-title">Before you hit record</span>
+        <ul class="check-list">
+          <li>Room tone recorded</li>
+          <li>Hook line rehearsed once, not memorized word for word</li>
+          <li>Phone on airplane mode / DND</li>
+          <li>Framing double-checked against Session 2 reference</li>
+        </ul>
+      </div>
+      <div class="card-right">
+        <div class="hook-block">
+          <span class="hook-label">Open with this - direct, drawing the contrast clearly</span>
+          <div class="hook-text">"The strategy that grows your income in your 30s is the opposite of the one you need at 65."</div>
+        </div>
+        <span class="card-section-title">Script</span>
+        <div class="script-block">
+          <div class="script-speaker">NICHOLE</div>
+          <div class="script-line">The strategy that grows your income in your 30s is the opposite of the one you need at 65.</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">JALYN</div>
+          <div class="script-line">In your accumulation years, it's about growth. Take the risk, reinvest, let it compound.</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">NICHOLE</div>
+          <div class="script-line">In retirement, it flips. Now you need predictable income, not just growth.</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">JALYN</div>
+          <div class="script-line">Are you still investing like it's your 30s, even if you're closer to needing the income?</div>
+        </div>
+        <div class="disclaimer-closer">
+          <span class="disclaimer-closer-label">Close with one of these</span>
+          <div class="disclaimer-closer-options">
+            <div class="disclaimer-closer-option">"Not advice, just perspective - your situation is unique, let's talk about it."</div>
+            <div class="disclaimer-closer-option">"This is our take, not personalized advice - reach out if you want to dig into your specific situation."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <div class="card-header">
+      <div>
+        <div class="card-num">Video 05</div>
+        <div class="card-title">Building Three Income Buckets</div>
+      </div>
+      <div class="card-meta">
+        <span class="format-badge badge-b">Nichole Solo</span>
+        <span class="length-badge">0:30-0:45</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-left">
+        <span class="card-section-title">Gear</span>
+        <ul class="gear-list">
+          <li>Tripod, chest-height</li>
+          <li>Lav mic(s)</li>
+          <li>Ring light if natural light is flat</li>
+        </ul>
+        <span class="card-section-title">Before you hit record</span>
+        <ul class="check-list">
+          <li>Room tone recorded</li>
+          <li>Hook line rehearsed once, not memorized word for word</li>
+          <li>Phone on airplane mode / DND</li>
+          <li>Framing double-checked against Session 2 reference</li>
+        </ul>
+      </div>
+      <div class="card-right">
+        <div class="hook-block">
+          <span class="hook-label">Open with this - clear, teaching tone</span>
+          <div class="hook-text">"Retirees with three separate income buckets are far less likely to run out of money than those relying on one."</div>
+        </div>
+        <span class="card-section-title">Script</span>
+        <div class="script-block">
+          <div class="script-speaker">NICHOLE</div>
+          <div class="script-line">Retirees with three separate income buckets are far less likely to run out of money than those relying on one.</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">NICHOLE</div>
+          <div class="script-line">Liquid for the short term, variable for growth, guaranteed for the income you can always count on.</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">NICHOLE</div>
+          <div class="script-line">Most people only have one of these built out. Usually the wrong one for where they are in life.</div>
+        </div>
+        <div class="disclaimer-closer">
+          <span class="disclaimer-closer-label">Close with one of these</span>
+          <div class="disclaimer-closer-options">
+            <div class="disclaimer-closer-option">"Not advice, just perspective - your situation is unique, let's talk about it."</div>
+            <div class="disclaimer-closer-option">"This is our take, not personalized advice - reach out if you want to dig into your specific situation."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <div class="card-header">
+      <div>
+        <div class="card-num">Video 06</div>
+        <div class="card-title">Becoming a World Class Saver</div>
+      </div>
+      <div class="card-meta">
+        <span class="format-badge badge-c">Jalyn Solo</span>
+        <span class="length-badge">0:25-0:35</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-left">
+        <span class="card-section-title">Gear</span>
+        <ul class="gear-list">
+          <li>Tripod, chest-height</li>
+          <li>Lav mic(s)</li>
+          <li>Ring light if natural light is flat</li>
+        </ul>
+        <span class="card-section-title">Before you hit record</span>
+        <ul class="check-list">
+          <li>Room tone recorded</li>
+          <li>Hook line rehearsed once, not memorized word for word</li>
+          <li>Phone on airplane mode / DND</li>
+          <li>Framing double-checked against Session 2 reference</li>
+        </ul>
+      </div>
+      <div class="card-right">
+        <div class="hook-block">
+          <span class="hook-label">Open with this - energetic, a little challenging</span>
+          <div class="hook-text">"Most people save less than 5% of their income. The number you actually need is 15 to 20."</div>
+        </div>
+        <span class="card-section-title">Script</span>
+        <div class="script-block">
+          <div class="script-speaker">JALYN</div>
+          <div class="script-line">Most people save less than 5% of their income. The number you actually need is 15 to 20.</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">JALYN</div>
+          <div class="script-line">That gap is the difference between retiring on your terms and working longer than you wanted to.</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">JALYN</div>
+          <div class="script-line">What percentage are you actually saving right now? Be honest with yourself.</div>
+        </div>
+        <div class="disclaimer-closer">
+          <span class="disclaimer-closer-label">Close with one of these</span>
+          <div class="disclaimer-closer-options">
+            <div class="disclaimer-closer-option">"Not advice, just perspective - your situation is unique, let's talk about it."</div>
+            <div class="disclaimer-closer-option">"This is our take, not personalized advice - reach out if you want to dig into your specific situation."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="bucket3">
+  <div class="bucket-header">
+    <div class="bucket-number">03</div>
+    <div class="bucket-info">
+      <h2>Monday Market Recap</h2>
+      <p>Weekly standing segment - Jalyn's idea, greenlit 8/22. Not a one-off script - this is the template to follow every week. Content changes, structure doesn't.</p>
+    </div>
+  </div>
+
+  <div class="series-band">
+    <span class="series-band-title">Recurring Weekly - Not Part of Session 3's One-Off Set</span>
+    <span class="series-band-sub">Solo &nbsp;·&nbsp; 0:45-1:00</span>
+  </div>
+
+  <div class="video-card">
+    <div class="card-header">
+      <div>
+        <div class="card-num">Weekly Template</div>
+        <div class="card-title">Monday Market Recap</div>
+      </div>
+      <div class="card-meta">
+        <span class="format-badge badge-c">Nichole or Jalyn</span>
+        <span class="length-badge">0:45-1:00</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-left">
+        <span class="card-section-title">Gear</span>
+        <ul class="gear-list">
+          <li>Tripod, chest-height</li>
+          <li>Lav mic</li>
+          <li>Ring light if natural light is flat</li>
+        </ul>
+        <span class="card-section-title">Cadence</span>
+        <ul class="check-list">
+          <li>Record and send by end of day Friday</li>
+          <li>Goes live the following Monday morning</li>
+          <li>Either Nichole or Jalyn, whoever's available that week</li>
+          <li>No opinions on camera, headlines and numbers only</li>
+        </ul>
+      </div>
+      <div class="card-right">
+        <div class="hook-block">
+          <span class="hook-label">Open with this - straight to camera, quick pace, no ramp-up</span>
+          <div class="hook-text">"Here's what happened in the markets this week."</div>
+        </div>
+        <span class="card-section-title">Script Template - Fill In Weekly</span>
+        <div class="script-block">
+          <div class="script-speaker">NICHOLE OR JALYN</div>
+          <div class="script-line">Here's what happened in the markets this week.</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">NICHOLE OR JALYN</div>
+          <div class="script-line">[Top headline / major economic news from the week]</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">NICHOLE OR JALYN</div>
+          <div class="script-line">[Sector or index performance - one or two numbers, stated plainly]</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">NICHOLE OR JALYN</div>
+          <div class="script-line">[One more headline or data point worth knowing, if there's room]</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">NICHOLE OR JALYN</div>
+          <div class="script-line">That's the week. See you next Monday.</div>
+        </div>
+        <div class="disclaimer-closer">
+          <span class="disclaimer-closer-label">Close with one of these</span>
+          <div class="disclaimer-closer-options">
+            <div class="disclaimer-closer-option">"Not advice, just perspective - your situation is unique, let's talk about it."</div>
+            <div class="disclaimer-closer-option">"This is our take, not personalized advice - reach out if you want to dig into your specific situation."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="delivery" class="delivery-section">
+  <span class="section-label">Sending Footage</span>
+  <p style="font-size:14px; color:var(--gray); line-height:1.7; margin-bottom:20px;">Upload to the shared Session 3 folder as you go, same as prior sessions. One subfolder per video, raw + any extra takes included.</p>
+  <div class="folder-structure">
+    <div class="folder">📁 FBT - Session 3</div>
+    <!-- one .sub div per video: 📁 Video NN - Short Description -->
+  </div>
+  <p class="delivery-note">Aim to have everything uploaded within 48 hours of filming so scripting/captioning can start on schedule for the September calendar.</p>
+</div>
+
+<div class="doc-footer">
+  <p>FINANCIAL BALANCE TODAY - Session 3</p>
+  <a href="mailto:marcus.synegal@gmail.com">Questions? marcus.synegal@gmail.com</a>
+</div>
+
+</body>
+</html>
