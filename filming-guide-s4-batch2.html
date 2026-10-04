@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Financial Balance Today Filming Guide - Batch 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1C2B3A;
+    --accent: #B8935F;
+    --accent-light: #EFE6D4;
+    --highlight: #C9A96E;
+    --bg: #F4F1EA;
+    --white: #FFFFFF;
+    --gray: #6B7685;
+    --light-gray: #ECE7DC;
+    --border: #E2DDD1;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    color: var(--primary);
+    padding: 40px 24px;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .top-nav { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 48px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+  .nav-link { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); text-decoration: none; padding: 6px 14px; border: 1px solid var(--border); border-radius: 100px; transition: all 0.2s; }
+  .nav-link:hover { background: var(--primary); color: var(--white); border-color: var(--primary); }
+
+  .page-header { margin-bottom: 56px; }
+  .page-eyebrow { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--highlight); margin-bottom: 12px; display: block; }
+  .page-title { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 600; color: var(--primary); line-height: 1.1; margin-bottom: 8px; }
+  .page-subtitle { font-size: 14px; color: var(--gray); }
+
+  .section-label { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid var(--accent-light); display: block; }
+
+  .setup-section { background: var(--white); border: 1px solid var(--border); border-top: 3px solid var(--primary); padding: 40px; margin-bottom: 40px; }
+  .setup-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 28px; }
+  .setup-block h3 { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+  .setup-block ul { list-style: none; }
+  .setup-block ul li { font-size: 13px; color: var(--gray); padding: 7px 0; border-bottom: 1px solid var(--light-gray); display: flex; gap: 10px; line-height: 1.5; }
+  .setup-block ul li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--highlight); flex-shrink: 0; margin-top: 7px; }
+  .setting-row { display: flex; justify-content: space-between; align-items: baseline; padding: 7px 0; border-bottom: 1px solid var(--light-gray); gap: 16px; }
+  .setting-label { font-size: 12px; font-weight: 500; color: var(--primary); flex-shrink: 0; }
+  .setting-value { font-size: 12px; color: var(--gray); text-align: right; }
+  .setup-note { background: var(--light-gray); padding: 14px 18px; margin-top: 16px; font-size: 12px; color: var(--gray); font-style: italic; line-height: 1.6; border-left: 2px solid var(--accent); }
+
+  .disclaimer-section { background: var(--white); border: 1px solid var(--border); border-top: 3px solid var(--highlight); padding: 40px; margin-bottom: 40px; }
+  .disclaimer-intro { font-size: 14px; color: var(--gray); line-height: 1.7; margin-bottom: 24px; }
+  .disclaimer-options { display: flex; flex-direction: column; gap: 12px; }
+  .disclaimer-option { background: var(--light-gray); padding: 16px 20px; border-left: 3px solid var(--highlight); }
+  .disclaimer-option-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--highlight); margin-bottom: 6px; display: block; }
+  .disclaimer-option p { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-style: italic; color: var(--primary); line-height: 1.6; }
+  .disclaimer-note { font-size: 12px; color: var(--gray); margin-top: 16px; font-style: italic; }
+
+  .bucket-header { margin: 56px 0 4px; display: flex; align-items: center; gap: 16px; }
+  .bucket-number { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 400; color: var(--accent-light); line-height: 1; flex-shrink: 0; }
+  .bucket-info h2 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--primary); }
+  .bucket-info p { font-size: 12px; color: var(--gray); margin-top: 4px; }
+
+  .video-card { background: var(--white); border: 1px solid var(--border); margin-bottom: 24px; }
+  .card-header { padding: 24px 32px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .card-num { font-family: 'Cormorant Garamond', serif; font-size: 13px; color: var(--accent); letter-spacing: 0.1em; }
+  .card-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--primary); flex: 1; }
+  .card-meta { display: flex; gap: 8px; align-items: center; flex-shrink: 0; flex-wrap: wrap; justify-content: flex-end; }
+  .format-badge { font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; padding: 5px 14px; border-radius: 100px; }
+  .badge-a { background: var(--primary); color: var(--white); }
+  .badge-b { background: var(--accent); color: var(--white); }
+  .badge-c { background: var(--highlight); color: var(--white); }
+  .length-badge { font-size: 10px; color: var(--gray); background: var(--light-gray); padding: 5px 12px; border-radius: 100px; }
+  .priority-badge { font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; padding: 5px 12px; border-radius: 100px; border: 1px solid var(--accent); }
+  .priority-badge.must { background: var(--accent-light); color: var(--primary); }
+  .priority-badge.bonus { background: transparent; color: var(--gray); border-color: var(--border); }
+
+  .card-body { padding: 28px 32px; display: grid; grid-template-columns: 200px 1fr; gap: 32px; }
+  .card-section-title { font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; display: block; }
+
+  .gear-list, .check-list { list-style: none; margin-bottom: 24px; }
+  .gear-list li, .check-list li { font-size: 12px; color: var(--gray); padding: 6px 0; border-bottom: 1px solid var(--light-gray); display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; }
+  .gear-list li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--highlight); flex-shrink: 0; margin-top: 6px; }
+  .check-list li::before { content: '☐'; font-size: 13px; color: var(--accent); flex-shrink: 0; line-height: 1.3; }
+
+  .hook-block { background: var(--primary); padding: 16px 20px; margin-bottom: 20px; }
+  .hook-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--highlight); margin-bottom: 8px; display: block; }
+  .hook-text { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; color: var(--white); line-height: 1.4; }
+
+  .script-block { margin-bottom: 14px; }
+  .script-speaker { font-size: 9px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+  .script-line { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-style: italic; color: var(--primary); line-height: 1.65; padding-left: 12px; border-left: 2px solid var(--accent-light); }
+
+  .disclaimer-closer { margin-top: 20px; padding: 14px 18px; background: var(--light-gray); border-left: 3px solid var(--highlight); }
+  .disclaimer-closer-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--highlight); margin-bottom: 8px; display: block; }
+  .disclaimer-closer-options { display: flex; flex-direction: column; gap: 6px; }
+  .disclaimer-closer-option { font-size: 13px; color: var(--gray); font-style: italic; display: flex; gap: 8px; align-items: flex-start; }
+  .disclaimer-closer-option::before { content: '›'; color: var(--highlight); flex-shrink: 0; font-style: normal; }
+
+  .delivery-section { background: var(--white); border: 1px solid var(--border); border-top: 3px solid var(--accent); padding: 40px; margin-top: 56px; }
+  .folder-structure { background: var(--primary); padding: 24px 28px; margin-top: 20px; font-family: monospace; font-size: 13px; color: rgba(255,255,255,0.85); line-height: 2; border-radius: 2px; }
+  .folder-structure .folder { color: var(--highlight); }
+  .folder-structure .sub { padding-left: 24px; color: rgba(255,255,255,0.6); }
+  .delivery-note { font-size: 13px; color: var(--gray); line-height: 1.7; margin-top: 20px; }
+
+  .doc-footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+  .doc-footer p { font-size: 12px; color: var(--gray); }
+  .doc-footer a { font-size: 12px; color: var(--accent); text-decoration: none; }
+
+  @media (max-width: 600px) {
+    .card-body { grid-template-columns: 1fr; }
+    .setup-grid { grid-template-columns: 1fr; }
+    .card-header { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="#setup" class="nav-link">Setup</a>
+  <a href="#disclaimer" class="nav-link">Disclaimer</a>
+  <a href="#bucket2" class="nav-link">The 6 Videos</a>
+  <a href="#delivery" class="nav-link">Sending Footage</a>
+</nav>
+
+<div class="page-header">
+  <span class="page-eyebrow">Financial Balance Today - Batch 2</span>
+  <h1 class="page-title">Filming Guide</h1>
+  <p class="page-subtitle">4 Must Film + 2 Bonus, All Duo &nbsp;·&nbsp; Due Monday 10/12 &nbsp;·&nbsp; November's content bank</p>
+</div>
+
+<div id="setup" class="setup-section">
+  <span class="section-label">Before You Start - Read Once</span>
+  <div class="setup-grid">
+    <div class="setup-block">
+      <h3>Camera</h3>
+      <div class="setting-row"><span class="setting-label">Resolution</span><span class="setting-value">4K, 24 or 30fps</span></div>
+      <div class="setting-row"><span class="setting-label">Format</span><span class="setting-value">Phone native (HEVC/MOV is fine)</span></div>
+      <div class="setting-row"><span class="setting-label">Stabilization</span><span class="setting-value">Tripod or propped still, no handheld</span></div>
+      <div class="setting-row"><span class="setting-label">Orientation</span><span class="setting-value">Vertical (9:16)</span></div>
+      <div class="setup-note">Film in landscape too if it's easy, but vertical is the one I actually need. Don't worry about upscaling or filters, I handle all of that in edit.</div>
+    </div>
+    <div class="setup-block">
+      <h3>Framing</h3>
+      <ul>
+        <li>Chest-up, eyes about a third from the top of frame</li>
+        <li>Leave headroom, don't crop foreheads</li>
+        <li>For the duo video, sit close enough to share the frame, angled slightly toward each other</li>
+        <li>Clean background, no window directly behind you (backlight kills exposure)</li>
+      </ul>
+    </div>
+    <div class="setup-block">
+      <h3>Audio</h3>
+      <ul>
+        <li>Lav mic if you have one, phone mic is fine if the room is quiet</li>
+        <li>Record a 5 second test clip first and check it back before the real take</li>
+        <li>Close windows, turn off fans/HVAC in the room</li>
+        <li>For the duo video, keep both voices roughly equal distance from the mic</li>
+      </ul>
+    </div>
+    <div class="setup-block">
+      <h3>Delivery Notes</h3>
+      <ul>
+        <li>Film these back to back in one sitting if you can, it's the most efficient way to knock out 6</li>
+        <li>If you flub a line, just pause and restart that sentence, I'll cut around it</li>
+        <li>Slate each file name with the video title before sending</li>
+      </ul>
+      <div class="setup-note">This batch becomes November's content bank, so it's worth getting done in one sitting rather than trickling in over two weeks.</div>
+    </div>
+  </div>
+</div>
+
+<div id="disclaimer" class="disclaimer-section">
+  <span class="section-label">Closing Disclaimer - Use On Every Video</span>
+  <p class="disclaimer-intro">Every video needs a verbal or on-screen close along these lines before you stop recording. This is the same line we run in the first comment on posts, so it should feel familiar.</p>
+  <div class="disclaimer-options">
+    <div class="disclaimer-option">
+      <span class="disclaimer-option-label">Standard close</span>
+      <p>"Not advice, just perspective. Your situation is unique, let's talk about it."</p>
+    </div>
+  </div>
+  <p class="disclaimer-note">If compliance has a different approved verbal line for on-camera use (vs. the comment version), send it over and I'll swap it into this guide.</p>
+</div>
+
+<div id="bucket2">
+  <div class="bucket-header">
+    <div class="bucket-number">02</div>
+    <div class="bucket-info">
+      <h2>Batch 2 - November Bank</h2>
+      <p>Record by Monday, October 12</p>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <div class="card-header">
+      <div>
+        <div class="card-num">Video 01</div>
+        <div class="card-title">CPA vs. Financial Planning</div>
+      </div>
+      <div class="card-meta">
+        <span class="format-badge badge-a">Duo - Nichole + Jalyn</span>
+        <span class="priority-badge must">Must film</span>
+        <span class="length-badge">~75 sec</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-left">
+        <span class="card-section-title">Gear</span>
+        <ul class="gear-list"><li>One phone, both of you in frame</li></ul>
+        <span class="card-section-title">Before you hit record</span>
+        <ul class="check-list">
+          <li>Both of you on camera, decide who opens and build off each other</li>
+          <li>End on the open question, not "book a call"</li>
+        </ul>
+      </div>
+      <div class="card-right">
+        <div class="hook-block">
+          <span class="hook-label">Open with this - knowing, not preachy</span>
+          <div class="hook-text">"My CPA handles my taxes, so why do I need financial planning?"</div>
+        </div>
+        <span class="card-section-title">Outline (talk it through together, not word for word)</span>
+        <div class="script-block"><div class="script-speaker">Point 1</div><div class="script-line">CPA vs. advisor are different roles, tax prep vs. proactive planning.</div></div>
+        <div class="script-block"><div class="script-speaker">Point 2</div><div class="script-line">Decisions that should happen before tax season, not during it.</div></div>
+        <div class="script-block"><div class="script-speaker">Close</div><div class="script-line">"Tax planning shouldn't start when your return is being prepared." Leave it there.</div></div>
+        <div class="disclaimer-closer"><span class="disclaimer-closer-label">Close with</span><div class="disclaimer-closer-options"><div class="disclaimer-closer-option">"Not advice, just perspective. Your situation is unique, let's talk about it."</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <div class="card-header">
+      <div>
+        <div class="card-num">Video 02</div>
+        <div class="card-title">The Financial Blind Spot of Business Owners</div>
+      </div>
+      <div class="card-meta">
+        <span class="format-badge badge-a">Duo - Nichole + Jalyn</span>
+        <span class="priority-badge must">Must film</span>
+        <span class="length-badge">~75 sec</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-left">
+        <span class="card-section-title">Gear</span>
+        <ul class="gear-list"><li>One phone, both of you in frame</li></ul>
+        <span class="card-section-title">Before you hit record</span>
+        <ul class="check-list">
+          <li>Both of you on camera, decide who opens and build off each other</li>
+          <li>End on the open question</li>
+        </ul>
+      </div>
+      <div class="card-right">
+        <div class="hook-block">
+          <span class="hook-label">Open with this - a little surprising</span>
+          <div class="hook-text">"Your business is worth a lot. But are you personally financially independent?"</div>
+        </div>
+        <span class="card-section-title">Outline (talk it through together, not word for word)</span>
+        <div class="script-block"><div class="script-speaker">Point 1</div><div class="script-line">Business checking is healthy, personal liquidity isn't, that gap is common and dangerous.</div></div>
+        <div class="script-block"><div class="script-speaker">Point 2</div><div class="script-line">Insurance, estate documents, investments and retirement all get handled separately, with no single view.</div></div>
+        <div class="script-block"><div class="script-speaker">Close</div><div class="script-line">Leave it with the question: where does the line between the business and your personal finances actually get blurry for you?</div></div>
+        <div class="disclaimer-closer"><span class="disclaimer-closer-label">Close with</span><div class="disclaimer-closer-options"><div class="disclaimer-closer-option">"Not advice, just perspective. Your situation is unique, let's talk about it."</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <div class="card-header">
+      <div>
+        <div class="card-num">Video 03</div>
+        <div class="card-title">If You Can't Work for 6 Months</div>
+      </div>
+      <div class="card-meta">
+        <span class="format-badge badge-a">Duo - Nichole + Jalyn</span>
+        <span class="priority-badge bonus">Bonus</span>
+        <span class="length-badge">~75 sec</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-left">
+        <span class="card-section-title">Gear</span>
+        <ul class="gear-list"><li>One phone, both of you in frame</li></ul>
+        <span class="card-section-title">Before you hit record</span>
+        <ul class="check-list">
+          <li>Both of you on camera, decide who opens and build off each other</li>
+          <li>End on the open question</li>
+        </ul>
+      </div>
+      <div class="card-right">
+        <div class="hook-block">
+          <span class="hook-label">Open with this - grounded, not alarmist</span>
+          <div class="hook-text">"Everyone plans for retirement. Fewer people plan for what happens if their income stops before it."</div>
+        </div>
+        <span class="card-section-title">Outline (talk it through together, not word for word)</span>
+        <div class="script-block"><div class="script-speaker">Point 1</div><div class="script-line">Business overhead keeps running even if the owner can't work, that's a different risk than a W-2 employee faces.</div></div>
+        <div class="script-block"><div class="script-speaker">Point 2</div><div class="script-line">Emergency reserves vs. disability coverage, what each actually covers and for how long.</div></div>
+        <div class="script-block"><div class="script-speaker">Close</div><div class="script-line">Leave it with the question: what happens to payroll, debt, and your mortgage if income stops for 6 months?</div></div>
+        <div class="disclaimer-closer"><span class="disclaimer-closer-label">Close with</span><div class="disclaimer-closer-options"><div class="disclaimer-closer-option">"Not advice, just perspective. Your situation is unique, let's talk about it."</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <div class="card-header">
+      <div>
+        <div class="card-num">Video 04</div>
+        <div class="card-title">Your Portfolio Might Be More Concentrated Than You Think</div>
+      </div>
+      <div class="card-meta">
+        <span class="format-badge badge-a">Duo - Nichole + Jalyn</span>
+        <span class="priority-badge must">Must film</span>
+        <span class="length-badge">~75 sec</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-left">
+        <span class="card-section-title">Gear</span>
+        <ul class="gear-list"><li>One phone, both of you in frame</li></ul>
+        <span class="card-section-title">Before you hit record</span>
+        <ul class="check-list">
+          <li>Both of you on camera, decide who opens and build off each other</li>
+          <li>Good candidate for a visual aid if you want to sketch it, otherwise just talk it through</li>
+        </ul>
+      </div>
+      <div class="card-right">
+        <div class="hook-block">
+          <span class="hook-label">Open with this - myth-busting tone</span>
+          <div class="hook-text">"Owning five ETFs doesn't necessarily mean you're diversified."</div>
+        </div>
+        <span class="card-section-title">Outline (talk it through together, not word for word)</span>
+        <div class="script-block"><div class="script-speaker">Point 1</div><div class="script-line">Overlap between S&amp;P 500, Nasdaq, and large-cap growth funds, you can own the same companies five times over.</div></div>
+        <div class="script-block"><div class="script-speaker">Point 2</div><div class="script-line">Company stock concentration, sector concentration, U.S. vs. international exposure.</div></div>
+        <div class="script-block"><div class="script-speaker">Close</div><div class="script-line">Leave it with the question: do you actually know what's inside the funds you own?</div></div>
+        <div class="disclaimer-closer"><span class="disclaimer-closer-label">Close with</span><div class="disclaimer-closer-options"><div class="disclaimer-closer-option">"Not advice, just perspective. Your situation is unique, let's talk about it."</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <div class="card-header">
+      <div>
+        <div class="card-num">Video 05</div>
+        <div class="card-title">The Checklist Nobody Gives You When Income Jumps</div>
+      </div>
+      <div class="card-meta">
+        <span class="format-badge badge-a">Duo - Nichole + Jalyn</span>
+        <span class="priority-badge must">Must film</span>
+        <span class="length-badge">~75 sec</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-left">
+        <span class="card-section-title">Gear</span>
+        <ul class="gear-list"><li>One phone, both of you in frame</li></ul>
+        <span class="card-section-title">Before you hit record</span>
+        <ul class="check-list">
+          <li>Both of you on camera, decide who opens and build off each other</li>
+          <li>End on the open question</li>
+        </ul>
+      </div>
+      <div class="card-right">
+        <div class="hook-block">
+          <span class="hook-label">Open with this - relatable, specific</span>
+          <div class="hook-text">"Going from $150K to $300K+ doesn't just mean invest more."</div>
+        </div>
+        <span class="card-section-title">Outline (talk it through together, not word for word)</span>
+        <div class="script-block"><div class="script-speaker">Point 1</div><div class="script-line">Tax withholding and estimated taxes usually don't keep pace with a fast income jump.</div></div>
+        <div class="script-block"><div class="script-speaker">Point 2</div><div class="script-line">Insurance and estate documents set at the old income level, employer benefits that stop being enough.</div></div>
+        <div class="script-block"><div class="script-speaker">Close</div><div class="script-line">Leave it with the question: if your income jumped, would your paperwork know it yet?</div></div>
+        <div class="disclaimer-closer"><span class="disclaimer-closer-label">Close with</span><div class="disclaimer-closer-options"><div class="disclaimer-closer-option">"Not advice, just perspective. Your situation is unique, let's talk about it."</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <div class="card-header">
+      <div>
+        <div class="card-num">Video 06</div>
+        <div class="card-title">This or That: Pick 3</div>
+      </div>
+      <div class="card-meta">
+        <span class="format-badge badge-a">Duo - Nichole + Jalyn</span>
+        <span class="priority-badge bonus">Bonus</span>
+        <span class="length-badge">~5 min each</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-left">
+        <span class="card-section-title">Gear</span>
+        <ul class="gear-list">
+          <li>One phone, both of you in frame</li>
+          <li>Tripod or propped still</li>
+        </ul>
+        <span class="card-section-title">Before you hit record</span>
+        <ul class="check-list">
+          <li>Film these back to back in one sitting</li>
+          <li>No script, same format as batch 1's duo video</li>
+          <li>5 minutes each is plenty, don't pad it out</li>
+        </ul>
+      </div>
+      <div class="card-right">
+        <div class="hook-block">
+          <span class="hook-label">Pick 3 prompts and react to each - business-owner leaning</span>
+          <div class="hook-text">"Take more W-2 salary, or leave it in the business?"</div>
+        </div>
+        <span class="card-section-title">Script</span>
+        <div class="script-block">
+          <div class="script-speaker">Suggested prompts (pick 3)</div>
+          <div class="script-line">1. Business owner: more W-2 salary vs. leave money in the business<br>2. Retirement: spend principal vs. "never touch principal"<br>3. Concentrated stock: hold because it made you wealthy vs. diversify because it made you wealthy</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">If none land</div>
+          <div class="script-line">Any of Jalyn's other This or That prompts work just as well, swap in whichever sparks the better reaction that day.</div>
+        </div>
+        <div class="disclaimer-closer">
+          <span class="disclaimer-closer-label">Close with</span>
+          <div class="disclaimer-closer-options">
+            <div class="disclaimer-closer-option">"Not advice, just perspective. Your situation is unique, let's talk about it."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="delivery" class="delivery-section">
+  <span class="section-label">Sending Footage</span>
+  <p style="font-size:14px; color:var(--gray); line-height:1.7; margin-bottom:20px;">Send each file as you finish it, don't wait to batch them. Text or email works, name each file with the video title so nothing gets mixed up.</p>
+  <div class="folder-structure">
+    <div class="folder">📁 FBT Batch 2</div>
+    <div class="sub">📁 Video 01 - CPA vs Planning</div>
+    <div class="sub">📁 Video 02 - Financial Blind Spot</div>
+    <div class="sub">📁 Video 03 - 6 Month Income Stop</div>
+    <div class="sub">📁 Video 04 - Portfolio Concentration</div>
+    <div class="sub">📁 Video 05 - Income Jump Checklist</div>
+    <div class="sub">📁 Video 06 - This or That (x3)</div>
+  </div>
+  <p class="delivery-note">Due Monday 10/12. The 4 Must Film videos (CPA, Blind Spot, Portfolio Concentration, Income Jump) cover every Friday through mid-November. The 2 Bonus videos (6 Month Income Stop, This or That x3) are extra, film them only if the session is running smooth.</p>
+</div>
+
+<div class="doc-footer">
+  <p>Financial Balance Today - Batch 2</p>
+  <a href="mailto:marcus.synegal@gmail.com">Questions? marcus.synegal@gmail.com</a>
+</div>
+
+</body>
+</html>

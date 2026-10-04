@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Financial Balance Today Filming Guide - Batch 1</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1C2B3A;
+    --accent: #B8935F;
+    --accent-light: #EFE6D4;
+    --highlight: #C9A96E;
+    --bg: #F4F1EA;
+    --white: #FFFFFF;
+    --gray: #6B7685;
+    --light-gray: #ECE7DC;
+    --border: #E2DDD1;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    color: var(--primary);
+    padding: 40px 24px;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .top-nav { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 48px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+  .nav-link { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); text-decoration: none; padding: 6px 14px; border: 1px solid var(--border); border-radius: 100px; transition: all 0.2s; }
+  .nav-link:hover { background: var(--primary); color: var(--white); border-color: var(--primary); }
+
+  .page-header { margin-bottom: 56px; }
+  .page-eyebrow { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--highlight); margin-bottom: 12px; display: block; }
+  .page-title { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 600; color: var(--primary); line-height: 1.1; margin-bottom: 8px; }
+  .page-subtitle { font-size: 14px; color: var(--gray); }
+
+  .section-label { font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid var(--accent-light); display: block; }
+
+  .setup-section { background: var(--white); border: 1px solid var(--border); border-top: 3px solid var(--primary); padding: 40px; margin-bottom: 40px; }
+  .setup-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 28px; }
+  .setup-block h3 { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+  .setup-block ul { list-style: none; }
+  .setup-block ul li { font-size: 13px; color: var(--gray); padding: 7px 0; border-bottom: 1px solid var(--light-gray); display: flex; gap: 10px; line-height: 1.5; }
+  .setup-block ul li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--highlight); flex-shrink: 0; margin-top: 7px; }
+  .setting-row { display: flex; justify-content: space-between; align-items: baseline; padding: 7px 0; border-bottom: 1px solid var(--light-gray); gap: 16px; }
+  .setting-label { font-size: 12px; font-weight: 500; color: var(--primary); flex-shrink: 0; }
+  .setting-value { font-size: 12px; color: var(--gray); text-align: right; }
+  .setup-note { background: var(--light-gray); padding: 14px 18px; margin-top: 16px; font-size: 12px; color: var(--gray); font-style: italic; line-height: 1.6; border-left: 2px solid var(--accent); }
+
+  .disclaimer-section { background: var(--white); border: 1px solid var(--border); border-top: 3px solid var(--highlight); padding: 40px; margin-bottom: 40px; }
+  .disclaimer-intro { font-size: 14px; color: var(--gray); line-height: 1.7; margin-bottom: 24px; }
+  .disclaimer-options { display: flex; flex-direction: column; gap: 12px; }
+  .disclaimer-option { background: var(--light-gray); padding: 16px 20px; border-left: 3px solid var(--highlight); }
+  .disclaimer-option-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--highlight); margin-bottom: 6px; display: block; }
+  .disclaimer-option p { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-style: italic; color: var(--primary); line-height: 1.6; }
+  .disclaimer-note { font-size: 12px; color: var(--gray); margin-top: 16px; font-style: italic; }
+
+  .bucket-header { margin: 56px 0 4px; display: flex; align-items: center; gap: 16px; }
+  .bucket-number { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 400; color: var(--accent-light); line-height: 1; flex-shrink: 0; }
+  .bucket-info h2 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; color: var(--primary); }
+  .bucket-info p { font-size: 12px; color: var(--gray); margin-top: 4px; }
+
+  .video-card { background: var(--white); border: 1px solid var(--border); margin-bottom: 24px; }
+  .card-header { padding: 24px 32px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .card-num { font-family: 'Cormorant Garamond', serif; font-size: 13px; color: var(--accent); letter-spacing: 0.1em; }
+  .card-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--primary); flex: 1; }
+  .card-meta { display: flex; gap: 8px; align-items: center; flex-shrink: 0; flex-wrap: wrap; justify-content: flex-end; }
+  .format-badge { font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; padding: 5px 14px; border-radius: 100px; }
+  .badge-a { background: var(--primary); color: var(--white); }
+  .badge-b { background: var(--accent); color: var(--white); }
+  .badge-c { background: var(--highlight); color: var(--white); }
+  .length-badge { font-size: 10px; color: var(--gray); background: var(--light-gray); padding: 5px 12px; border-radius: 100px; }
+
+  .card-body { padding: 28px 32px; display: grid; grid-template-columns: 200px 1fr; gap: 32px; }
+  .card-section-title { font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; display: block; }
+
+  .gear-list, .check-list { list-style: none; margin-bottom: 24px; }
+  .gear-list li, .check-list li { font-size: 12px; color: var(--gray); padding: 6px 0; border-bottom: 1px solid var(--light-gray); display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; }
+  .gear-list li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--highlight); flex-shrink: 0; margin-top: 6px; }
+  .check-list li::before { content: '☐'; font-size: 13px; color: var(--accent); flex-shrink: 0; line-height: 1.3; }
+
+  .hook-block { background: var(--primary); padding: 16px 20px; margin-bottom: 20px; }
+  .hook-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--highlight); margin-bottom: 8px; display: block; }
+  .hook-text { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; color: var(--white); line-height: 1.4; }
+
+  .script-block { margin-bottom: 14px; }
+  .script-speaker { font-size: 9px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+  .script-line { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-style: italic; color: var(--primary); line-height: 1.65; padding-left: 12px; border-left: 2px solid var(--accent-light); }
+
+  .disclaimer-closer { margin-top: 20px; padding: 14px 18px; background: var(--light-gray); border-left: 3px solid var(--highlight); }
+  .disclaimer-closer-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--highlight); margin-bottom: 8px; display: block; }
+  .disclaimer-closer-options { display: flex; flex-direction: column; gap: 6px; }
+  .disclaimer-closer-option { font-size: 13px; color: var(--gray); font-style: italic; display: flex; gap: 8px; align-items: flex-start; }
+  .disclaimer-closer-option::before { content: '›'; color: var(--highlight); flex-shrink: 0; font-style: normal; }
+
+  .delivery-section { background: var(--white); border: 1px solid var(--border); border-top: 3px solid var(--accent); padding: 40px; margin-top: 56px; }
+  .folder-structure { background: var(--primary); padding: 24px 28px; margin-top: 20px; font-family: monospace; font-size: 13px; color: rgba(255,255,255,0.85); line-height: 2; border-radius: 2px; }
+  .folder-structure .folder { color: var(--highlight); }
+  .folder-structure .sub { padding-left: 24px; color: rgba(255,255,255,0.6); }
+  .delivery-note { font-size: 13px; color: var(--gray); line-height: 1.7; margin-top: 20px; }
+
+  .doc-footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+  .doc-footer p { font-size: 12px; color: var(--gray); }
+  .doc-footer a { font-size: 12px; color: var(--accent); text-decoration: none; }
+
+  @media (max-width: 600px) {
+    .card-body { grid-template-columns: 1fr; }
+    .setup-grid { grid-template-columns: 1fr; }
+    .card-header { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="#setup" class="nav-link">Setup</a>
+  <a href="#disclaimer" class="nav-link">Disclaimer</a>
+  <a href="#bucket1" class="nav-link">The 2 Videos</a>
+  <a href="#delivery" class="nav-link">Sending Footage</a>
+</nav>
+
+<div class="page-header">
+  <span class="page-eyebrow">Financial Balance Today - Batch 1</span>
+  <h1 class="page-title">Filming Guide</h1>
+  <p class="page-subtitle">2 Videos, Both Duo &nbsp;·&nbsp; Due Wednesday 10/7 &nbsp;·&nbsp; Carries us through 10/15</p>
+</div>
+
+<div id="setup" class="setup-section">
+  <span class="section-label">Before You Start - Read Once</span>
+  <div class="setup-grid">
+    <div class="setup-block">
+      <h3>Camera</h3>
+      <div class="setting-row"><span class="setting-label">Resolution</span><span class="setting-value">4K, 24 or 30fps</span></div>
+      <div class="setting-row"><span class="setting-label">Format</span><span class="setting-value">Phone native (HEVC/MOV is fine)</span></div>
+      <div class="setting-row"><span class="setting-label">Stabilization</span><span class="setting-value">Tripod or propped still, no handheld</span></div>
+      <div class="setting-row"><span class="setting-label">Orientation</span><span class="setting-value">Vertical (9:16)</span></div>
+      <div class="setup-note">Film in landscape too if it's easy, but vertical is the one I actually need. Don't worry about upscaling or filters, I handle all of that in edit.</div>
+    </div>
+    <div class="setup-block">
+      <h3>Framing</h3>
+      <ul>
+        <li>Chest-up, eyes about a third from the top of frame</li>
+        <li>Leave headroom, don't crop foreheads</li>
+        <li>For the duo video, sit close enough to share the frame, angled slightly toward each other</li>
+        <li>Clean background, no window directly behind you (backlight kills exposure)</li>
+      </ul>
+    </div>
+    <div class="setup-block">
+      <h3>Audio</h3>
+      <ul>
+        <li>Lav mic if you have one, phone mic is fine if the room is quiet</li>
+        <li>Record a 5 second test clip first and check it back before the real take</li>
+        <li>Close windows, turn off fans/HVAC in the room</li>
+        <li>For the duo video, keep both voices roughly equal distance from the mic</li>
+      </ul>
+    </div>
+    <div class="setup-block">
+      <h3>Delivery Notes</h3>
+      <ul>
+        <li>One take is fine, don't over-polish, the conversational one works better a little rough</li>
+        <li>If you flub a line, just pause and restart that sentence, I'll cut around it</li>
+        <li>Slate each file name with the video title before sending</li>
+      </ul>
+      <div class="setup-note">We're behind schedule, so the goal this round is quantity of usable footage over perfect delivery. Don't overthink any single take.</div>
+    </div>
+  </div>
+</div>
+
+<div id="disclaimer" class="disclaimer-section">
+  <span class="section-label">Closing Disclaimer - Use On Both Videos</span>
+  <p class="disclaimer-intro">Every video needs a verbal or on-screen close along these lines before you stop recording. This is the same line we run in the first comment on posts, so it should feel familiar.</p>
+  <div class="disclaimer-options">
+    <div class="disclaimer-option">
+      <span class="disclaimer-option-label">Standard close</span>
+      <p>"Not advice, just perspective. Your situation is unique, let's talk about it."</p>
+    </div>
+  </div>
+  <p class="disclaimer-note">If compliance has a different approved verbal line for on-camera use (vs. the comment version), send it over and I'll swap it into this guide.</p>
+</div>
+
+<div id="bucket1">
+  <div class="bucket-header">
+    <div class="bucket-number">01</div>
+    <div class="bucket-info">
+      <h2>Batch 1 - Catch-Up</h2>
+      <p>Record by Wednesday, October 7</p>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <div class="card-header">
+      <div>
+        <div class="card-num">Video 01</div>
+        <div class="card-title">This or That: Market Drops 20%</div>
+      </div>
+      <div class="card-meta">
+        <span class="format-badge badge-a">Duo - Nichole + Jalyn</span>
+        <span class="length-badge">~5 min raw</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-left">
+        <span class="card-section-title">Gear</span>
+        <ul class="gear-list">
+          <li>One phone, both of you in frame</li>
+          <li>Tripod or propped still</li>
+        </ul>
+        <span class="card-section-title">Before you hit record</span>
+        <ul class="check-list">
+          <li>No script, this is a real reaction</li>
+          <li>Decide who answers first, then let it go back and forth</li>
+          <li>Keep it to about 5 minutes, don't pad it out</li>
+        </ul>
+      </div>
+      <div class="card-right">
+        <div class="hook-block">
+          <span class="hook-label">Open with this - direct, a little provocative</span>
+          <div class="hook-text">"Market drops 20% tomorrow. Do you do nothing, or do you rebalance?"</div>
+        </div>
+        <span class="card-section-title">Script</span>
+        <div class="script-block">
+          <div class="script-speaker">Format, not script</div>
+          <div class="script-line">No lines to memorize here. One of you reads the prompt, then you genuinely react and debate it for a few minutes, pulling in what you're each actually hearing from clients right now given the recent Treasury/volatility headlines. Let it run, I'll cut the best 2-3 posts out of it.</div>
+        </div>
+        <div class="disclaimer-closer">
+          <span class="disclaimer-closer-label">Close with</span>
+          <div class="disclaimer-closer-options">
+            <div class="disclaimer-closer-option">"Not advice, just perspective. Your situation is unique, let's talk about it."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <div class="card-header">
+      <div>
+        <div class="card-num">Video 02</div>
+        <div class="card-title">Retirement Plans for Business Owners</div>
+      </div>
+      <div class="card-meta">
+        <span class="format-badge badge-a">Duo - Nichole + Jalyn</span>
+        <span class="length-badge">~75 sec</span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-left">
+        <span class="card-section-title">Gear</span>
+        <ul class="gear-list">
+          <li>One phone, both of you in frame</li>
+        </ul>
+        <span class="card-section-title">Before you hit record</span>
+        <ul class="check-list">
+          <li>Both of you on camera, decide who opens and build off each other</li>
+          <li>Light outline only, don't write it word for word</li>
+          <li>Lead with the hook, close on the open question</li>
+        </ul>
+      </div>
+      <div class="card-right">
+        <div class="hook-block">
+          <span class="hook-label">Open with this - confident, plainspoken</span>
+          <div class="hook-text">"Which retirement plan is actually right for your business?"</div>
+        </div>
+        <span class="card-section-title">Outline (talk it through together, not word for word)</span>
+        <div class="script-block">
+          <div class="script-speaker">Point 1</div>
+          <div class="script-line">SIMPLE IRA vs. CalSavers vs. 401(k), who each one actually fits.</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">Point 2</div>
+          <div class="script-line">SEP IRA vs. Solo 401(k) for owners without employees.</div>
+        </div>
+        <div class="script-block">
+          <div class="script-speaker">Close</div>
+          <div class="script-line">Leave it open: ask what they'd want to know if they were setting this up for the first time, don't push a call.</div>
+        </div>
+        <div class="disclaimer-closer">
+          <span class="disclaimer-closer-label">Close with</span>
+          <div class="disclaimer-closer-options">
+            <div class="disclaimer-closer-option">"Not advice, just perspective. Your situation is unique, let's talk about it."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="delivery" class="delivery-section">
+  <span class="section-label">Sending Footage</span>
+  <p style="font-size:14px; color:var(--gray); line-height:1.7; margin-bottom:20px;">Send each file as you finish it, don't wait to batch them. Text or email works, name each file with the video title so nothing gets mixed up.</p>
+  <div class="folder-structure">
+    <div class="folder">📁 FBT Batch 1</div>
+    <div class="sub">📁 Video 01 - This or That Market Drop</div>
+    <div class="sub">📁 Video 02 - Retirement Plans</div>
+  </div>
+  <p class="delivery-note">Both due Wednesday 10/7. This covers posting through 10/15, batch 2 (6 more videos) is a separate guide coming once this one's confirmed.</p>
+</div>
+
+<div class="doc-footer">
+  <p>Financial Balance Today - Batch 1</p>
+  <a href="mailto:marcus.synegal@gmail.com">Questions? marcus.synegal@gmail.com</a>
+</div>
+
+</body>
+</html>
